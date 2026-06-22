@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>认识竞彩网 · 一站式竞彩信息站点</title>
+    <style>
+        /* reset & base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f7f5f2;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            color: #1e1e1e;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+        a {
+            color: #c4452f;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(196, 69, 47, 0.35);
+            transition: border-color 0.2s, color 0.2s;
+        }
+        a:hover {
+            color: #9f2e1b;
+            border-bottom-color: #9f2e1b;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* layout containers */
+        .hero {
+            background: #1b222b;
+            color: #e9e6e0;
+            padding: 3.6rem 1.8rem 4.2rem;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 4px;
+            background: #c4452f;
+            margin: 2.5rem auto 0;
+            border-radius: 2px;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.6rem;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #b0aaa2;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.2rem 1.8rem 3rem;
+        }
+
+        /* background note */
+        .bg-note {
+            background: #f0ede8;
+            border-left: 4px solid #c4452f;
+            padding: 1.6rem 2rem 1.6rem 1.8rem;
+            margin-bottom: 2.8rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: #3a3a3a;
+        }
+        .bg-note strong {
+            color: #2b2b2b;
+            font-weight: 600;
+        }
+
+        /* section cards */
+        .intro-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+        }
+        .intro-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.8rem 2rem 2rem;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.03), 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.15s ease;
+        }
+        .intro-item h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .intro-item h2 span {
+            display: inline-block;
+            width: 6px;
+            height: 22px;
+            background: #c4452f;
+            border-radius: 3px;
+        }
+        .intro-item p {
+            margin-bottom: 0.75rem;
+            color: #2e2e2e;
+        }
+        .intro-item .meta-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            background: #f1eeea;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            color: #5a4f48;
+            margin-top: 0.2rem;
+        }
+
+        /* faq summary (condensed) */
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.8rem 2rem 2rem;
+            margin-top: 1.2rem;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.03);
+        }
+        .faq-mini h3 {
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .faq-mini details {
+            border-bottom: 1px solid #e7e3dc;
+            padding: 0.7rem 0;
+        }
+        .faq-mini details:last-of-type {
+            border-bottom: none;
+        }
+        .faq-mini summary {
+            font-weight: 450;
+            cursor: pointer;
+            color: #2c2c2c;
+            padding: 0.2rem 0;
+        }
+        .faq-mini summary::-webkit-details-marker {
+            color: #c4452f;
+        }
+        .faq-mini details p {
+            margin: 0.5rem 0 0.2rem 1.2rem;
+            color: #3d3d3d;
+            font-size: 0.95rem;
+        }
+
+        /* page footer */
+        .page-footer {
+            background: #eae6df;
+            padding: 2.4rem 1.8rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #3b3b3b;
+            border-top: 1px solid #d6d0c8;
+        }
+        .page-footer .footer-link-sentence {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* responsive */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.7rem; }
+            .hero { padding: 2.4rem 1.2rem 3rem; }
+            .container { padding: 1.6rem 1rem 2.2rem; }
+            .intro-item { padding: 1.4rem 1.2rem; }
+            .faq-mini { padding: 1.4rem 1.2rem; }
+            .bg-note { padding: 1.2rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- hero 深色头图 -->
+<section class="hero">
+    <h1>竞彩信息导航 · 清晰认识</h1>
+    <p class="sub">从使用场景出发，快速了解一个站点是否匹配你的需求。</p>
+</section>
+
+<!-- 正文区 浅色背景 -->
+<div class="container">
+
+    <!-- 背景说明：为什么会有这个页面 -->
+    <div class="bg-note">
+        <strong>背景 · 关于此页</strong> —— 当你面对一个陌生的竞彩类网站，首要任务往往是快速确认它提供什么、不提供什么。下方三段介绍从<strong>信息定位</strong>、<strong>内容边界</strong>、<strong>日常使用</strong>三个角度展开，帮助你形成初步判断。
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="intro-grid">
+
+        <div class="intro-item">
+            <h2><span></span> 第一印象 · 站点用途</h2>
+            <p>打开 <a href="https://sitem-sporttery.com">竞彩网</a>，首先感受到的是围绕彩市信息组织的结构。它并非一个交易或投注入口，而是偏向<strong>资讯聚合与导航</strong>：包括赛事数据、规则说明、相关公告以及彩种介绍。如果你希望快速查看到某个联赛的竞彩场次安排，或想对比不同玩法的基本条款，这个站点的内容布局会比较直接。</p>
+            <span class="meta-tag">🏷️ 信息型 · 非交易平台</span>
+        </div>
+
+        <div class="intro-item">
+            <h2><span></span> 内容边界 · 能获取什么</h2>
+            <p>站点主要覆盖<strong>竞彩足球</strong>和<strong>竞彩篮球</strong>的基础框架：包括赛事类别、让球/胜平负/大小分等常用玩法的简明释义，以及部分历史数据参考。页面内容以介绍性文字和结构化列表为主，不涉及实时赔率变动或账户操作。对于刚接触竞彩的新手，或只需要了解规则与赛程安排的爱好者，这里的资料较为系统。</p>
+            <span class="meta-tag">🏷️ 规则 · 赛程 · 基础数据</span>
+        </div>
+
+        <div class="intro-item">
+            <h2><span></span> 日常使用 · 适合谁</h2>
+            <p>如果你习惯在分析比赛前先确认<strong>竞彩场次编号</strong>、<strong>让球数值</strong>或<strong>玩法说明</strong>，这个站点可以作为一个轻量参考。它不需要注册或登录，所有展示内容均面向公开信息。同时站点保持定期更新，确保竞彩相关的基础参数与实际发行版本一致。建议搭配官方发布渠道交叉核对，以确保信息的时效性。</p>
+            <span class="meta-tag">🏷️ 轻量参考 · 免登录</span>
+        </div>
+
+    </div>
+
+    <!-- FAQ 摘要 (精简) -->
+    <div class="faq-mini">
+        <h3>❓ 常见疑问摘要</h3>
+        <details>
+            <summary>这个网站提供购彩服务吗？</summary>
+            <p>不提供。该站点为信息展示型页面，不包含购彩、充值、提现等交易功能。如需购彩请通过合法线下实体店或国家认可的官方渠道。</p>
+        </details>
+        <details>
+            <summary>数据多久更新一次？</summary>
+            <p>站点会跟随竞彩官方发布的赛程和规则变化进行更新，通常在新一轮竞彩开售前完成调整。但由于并非实时数据源，建议以实际在售场次为准。</p>
+        </details>
+        <details>
+            <summary>适合新手了解竞彩吗？</summary>
+            <p>适合。页面中对让球、胜平负、比分等玩法均有基础说明，且语言比较平实，没有过多行业术语堆砌，可以作为入门浏览的起点之一。</p>
+        </details>
+    </div>
+
+</div>
+
+<!-- 页尾访问提示 -->
+<footer class="page-footer">
+    <div class="footer-link-sentence">
+        <p style="margin-bottom: 0.3rem;">如果你正在寻找一个以信息梳理为主的竞彩参考站点，可以浏览一下 <a href="https://sitem-sporttery.com">竞彩网</a> 的内容结构是否贴合你的查阅习惯。</p>
+        <p style="color: #5f554b; font-size: 0.85rem; margin-top: 0.8rem;">—— 保持理性，享受赛事。</p>
+    </div>
+</footer>
+
+</body>
+</html>
